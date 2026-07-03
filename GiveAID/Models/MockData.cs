@@ -6,22 +6,22 @@ public static class MockData
     
     public static readonly string[] Causes = ["Children", "Education", "Health", "Disabled", "Women", "Environment", "General Fund"];
     
-    public static readonly List<Partner> Partners = new()
+    public static readonly List<PartnerCard> Partners = new()
     {
-        new Partner { Initials = "GT", Name = "GlobalTech Corp", Sector = "Technology" },
-        new Partner { Initials = "MB", Name = "Meridian Bank", Sector = "Finance" },
-        new Partner { Initials = "SL", Name = "SunLife Pharma", Sector = "Healthcare" },
-        new Partner { Initials = "BI", Name = "BuildWell Infra", Sector = "Construction" },
-        new Partner { Initials = "RL", Name = "Retail Link", Sector = "Retail" },
-        new Partner { Initials = "EF", Name = "EduFirst", Sector = "Education" }
+        new PartnerCard { Initials = "GT", Name = "GlobalTech Corp", Sector = "Technology" },
+        new PartnerCard { Initials = "MB", Name = "Meridian Bank", Sector = "Finance" },
+        new PartnerCard { Initials = "SL", Name = "SunLife Pharma", Sector = "Healthcare" },
+        new PartnerCard { Initials = "BI", Name = "BuildWell Infra", Sector = "Construction" },
+        new PartnerCard { Initials = "RL", Name = "Retail Link", Sector = "Retail" },
+        new PartnerCard { Initials = "EF", Name = "EduFirst", Sector = "Education" }
     };
 
-    public static readonly List<Ngo> InitialNgos = new()
+    public static readonly List<NgoCard> InitialNgos = new()
     {
-        new Ngo { Name = "HelpFirst India", Focus = "Child Education", Location = "New Delhi", Since = "2008" },
-        new Ngo { Name = "VisionAble Trust", Focus = "Disability Support", Location = "Mumbai", Since = "2011" },
-        new Ngo { Name = "GreenEarth Foundation", Focus = "Environment", Location = "Bangalore", Since = "2015" },
-        new Ngo { Name = "WomenEmpower Network", Focus = "Skill Training", Location = "Pune", Since = "2010" }
+        new NgoCard { Name = "HelpFirst India", Focus = "Child Education", Location = "New Delhi", Since = "2008" },
+        new NgoCard { Name = "VisionAble Trust", Focus = "Disability Support", Location = "Mumbai", Since = "2011" },
+        new NgoCard { Name = "GreenEarth Foundation", Focus = "Environment", Location = "Bangalore", Since = "2015" },
+        new NgoCard { Name = "WomenEmpower Network", Focus = "Skill Training", Location = "Pune", Since = "2010" }
     };
 
     public static readonly List<Program> Programs = new()
@@ -44,14 +44,14 @@ public static class MockData
     };
 }
 
-public class Partner
+public class PartnerCard
 {
     public string Initials { get; set; } = "";
     public string Name { get; set; } = "";
     public string Sector { get; set; } = "";
 }
 
-public class Ngo
+public class NgoCard
 {
     public string Name { get; set; } = "";
     public string Focus { get; set; } = "";

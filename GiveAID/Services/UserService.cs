@@ -12,9 +12,9 @@ public class UserService(AppDbContext dbContext): IUserService
         return await dbContext.Users.ToListAsync(ct);
     }
 
-    public async Task<User?> GetUserByIdAsync(Guid userId, CancellationToken ct = default)
+    public async Task<User?> GetUserByIdAsync(int userId, CancellationToken ct = default)
     {
-        return await dbContext.Users.FirstOrDefaultAsync(u => u.UserId == userId, ct);
+        return await dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId, ct);
     }
 
     public async Task<User?> GetUserByEmailAsync(string email, CancellationToken ct = default)
@@ -36,9 +36,9 @@ public class UserService(AppDbContext dbContext): IUserService
         return user;
     }
 
-    public async Task<bool> DeleteUserAsync(Guid userId, CancellationToken ct = default)
+    public async Task<bool> DeleteUserAsync(int userId, CancellationToken ct = default)
     {
-        var user = await dbContext.Users.FirstOrDefaultAsync(u => u.UserId == userId, ct);
+        var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId, ct);
         if (user != null)
         {
             dbContext.Users.Remove(user);
