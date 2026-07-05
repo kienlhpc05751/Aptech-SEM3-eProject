@@ -11,6 +11,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddHydro();
 builder.Services.AddDbContext<GiveAidContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IQueryService, QueryService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 var app = builder.Build();
