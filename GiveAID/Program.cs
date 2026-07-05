@@ -15,6 +15,10 @@ builder.Services.AddScoped<IQueryService, QueryService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 
+builder.Services.AddScoped<IAboutUsSubpageService, AboutUsSubpageService>();
+builder.Services.AddScoped<IProgrammeService, ProgrammeService>();
+builder.Services.AddAuthentication("Cookies").AddCookie("Cookies", options => { options.LoginPath = "/Login"; });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,6 +39,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
